@@ -111,7 +111,7 @@ module QingCloud
                     volume_name: nil,
                     volume_type: nil,
                     count: nil,
-                    zone)eval(build_fetch_match)
+                    zone:)eval(build_fetch_match)
                 end
 
                 def delete_volumes(
@@ -646,7 +646,7 @@ module QingCloud
                     verbose: nil,
                     offset: nil,
                     limit: nil,
-                    zone:,)eval(build_fetch 'DescribeRDBs')
+                    zone:)eval(build_fetch 'DescribeRDBs')
                 end
 
                 def delete_rdbs(

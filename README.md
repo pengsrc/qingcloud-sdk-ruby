@@ -2,15 +2,10 @@
 
 SDK for QingCloud
 
-## Warning
+## Install from RubyGems
 
-This sdk is still under development, use at your own cost.
+	$ gem install qingcloud-sdk
 
-Supported Actions: Instances, Jobs, Zones
-
-## Usage
-
-TODO
 
 ## Install from Source Code
 
@@ -18,13 +13,9 @@ Get Code from Github:
 
 	$ git clone git@github.com:prettyxw/qingcloud-sdk-ruby.git
 
-Go Inside:
+Build and Install with Bundle:
 
-    $ cd qingcloud-sdk-ruby
-
-or Build and Install with Bundle:
-
-    $ bundle exec rake install
+    $ cd qingcloud-sdk-ruby && bundle exec rake install
 
 ## Install using Gemfile
 
@@ -43,6 +34,54 @@ And then execute:
 Using gem to remove this package:
 
     $ gem uninstall qingcloud-sdk
+
+## Getting Started
+
+Before your start, please go to [QingCloud Console](https://console.qingcloud.com/access_keys/) to create a pair of QingCloud API keys.
+
+## Code Example
+
+### Create Connection and Service
+
+```ruby
+require 'qingcloud/sdk'
+
+# Create Connection and Service
+
+connector = QingCloud::SDK::Client::Connector.init(
+    'qy_access_key_id', 'qy_secret_access_key'
+)
+
+service = QingCloud::SDK::Client::Service.new connector
+
+# Describe Instances
+
+service.describe_instances zone: 'ap1'
+
+puts service.response
+
+# Run Instances
+
+service.run_instances(
+    image_id: 'centos7x64b',
+    cpu: 1,
+    memory: 1024,
+    login_mode: 'keypair',
+    login_keypair: 'keypair-id',
+    zone: 'ap1'
+)
+
+puts service.response
+
+# Terminate Instances
+
+service.describe_instances instances: ['instance-id'], zone: 'ap1'
+
+puts service.response
+```
+### Describe Zones
+
+
 
 ## Contributing
 

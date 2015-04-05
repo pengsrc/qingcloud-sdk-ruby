@@ -29,7 +29,7 @@ module QingCloud
                 def fetch_response(action, params={})
 
                     params.map { |key, value|
-                        params.delete key unless value && value.length > 0
+                        params.delete key unless (value.is_a? Numeric) || (value && value.length > 0)
                     }
 
                     response_body = @connector.fetch action, params
