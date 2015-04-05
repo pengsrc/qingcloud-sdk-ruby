@@ -2,6 +2,8 @@
 
 SDK for QingCloud
 
+[![Gem Version](https://badge.fury.io/rb/qingcloud-sdk.svg)](http://badge.fury.io/rb/qingcloud-sdk)
+
 ## Install from RubyGems
 
 	$ gem install qingcloud-sdk
