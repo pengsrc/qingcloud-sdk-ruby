@@ -61,9 +61,8 @@ require 'qingcloud/sdk'
 
 # Create Connection and Service
 
-connector = QingCloud::SDK::Client::Connector.init(
-    'qy_access_key_id', 'qy_secret_access_key'
-)
+connector = QingCloud::SDK::Client::Connector.init 'qy_access_key_id',
+                                                   'qy_secret_access_key'
 
 service = QingCloud::SDK::Client::Service.new connector
 
