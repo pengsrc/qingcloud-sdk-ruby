@@ -5,7 +5,7 @@ module QingCloud
 
         RSpec.describe Client::Service  do
 
-            it 'check_api_key' do
+            it 'check_api_key', focus: true do
                 c = Client::Connector.init_with_config_file
                 s = Client::Service.new c
                 puts s.check_api_keys

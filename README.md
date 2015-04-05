@@ -2,6 +2,12 @@
 
 SDK for QingCloud
 
+## Warning
+
+This sdk is still under development, use at your own cost.
+
+Supported Actions: Instances, Jobs, Zones
+
 ## Usage
 
 TODO

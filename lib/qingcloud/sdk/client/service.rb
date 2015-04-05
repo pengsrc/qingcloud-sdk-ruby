@@ -13,20 +13,7 @@ module QingCloud
                     end
                 end
 
-                def describe_zones(
-                    zones: [],
-                    status: []) eval(build_fetch_match)
-                end
-
-                def describe_jobs(
-                    jobs: [],
-                    status: [],
-                    job_action: nil,
-                    verbose: nil,
-                    offset: nil,
-                    limit: nil,
-                    zone:) eval(build_fetch_match)
-                end
+                # Instances
 
                 def describe_instances(
                     instances: [],
@@ -65,6 +52,66 @@ module QingCloud
                     instances:,
                     zone:)eval(build_fetch_match)
                 end
+
+                def start_instances(
+                    instances:,
+                    zone:)eval(build_fetch_match)
+                end
+
+                def stop_instances(
+                    instances:,
+                    force: nil,
+                    zone:)eval(build_fetch_match)
+                end
+
+                def restart_instances(
+                    instances:,
+                    zone:)eval(build_fetch_match)
+                end
+
+                def reset_instances(
+                    instances:,
+                    login_mode:,
+                    login_keypair: nil,
+                    login_passwd: nil,
+                    need_newsid: nil,
+                    zone:)eval(build_fetch_match)
+                end
+
+                def resize_instances(
+                    instances:,
+                    instance_type: nil,
+                    cpu: nil,
+                    memory: nil,
+                    zone: nil)eval(build_fetch_match)
+                end
+
+                def modify_instance_attributes(
+                    instance:,
+                    instance_name: nil,
+                    description: nil,
+                    zone:)eval(build_fetch_match)
+                end
+
+                # Jobs
+
+                def describe_jobs(
+                    jobs: [],
+                    status: [],
+                    job_action: nil,
+                    verbose: nil,
+                    offset: nil,
+                    limit: nil,
+                    zone:) eval(build_fetch_match)
+                end
+
+                # Zones
+
+                def describe_zones(
+                    zones: [],
+                    status: []) eval(build_fetch_match)
+                end
+
             end
 
         end
