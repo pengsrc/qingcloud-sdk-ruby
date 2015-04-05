@@ -41,8 +41,6 @@ Before your start, please go to [QingCloud Console](https://console.qingcloud.co
 
 ## Code Example
 
-### Create Connection and Service
-
 ```ruby
 require 'qingcloud/sdk'
 
@@ -79,9 +77,6 @@ service.describe_instances instances: ['instance-id'], zone: 'ap1'
 
 puts service.response
 ```
-### Describe Zones
-
-
 
 ## Contributing
 
