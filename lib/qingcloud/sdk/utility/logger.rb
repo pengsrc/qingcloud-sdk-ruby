@@ -1,4 +1,5 @@
 require 'logger'
+require 'fileutils'
 
 module QingCloud
     module SDK
@@ -7,7 +8,8 @@ module QingCloud
             def self.logger
                 unless self.class_variable_defined? '@@logger'
                     # @@logger = Logger.new(STDOUT)
-                    @@logger = Logger.new(Contract::LOG_FILE_PATH)
+                    FileUtils.mkdir_p Contract::LOG_FILE_DIRECTORY
+                    @@logger = Logger.new Contract::LOG_FILE_PATH
                 end
                 @@logger
             end

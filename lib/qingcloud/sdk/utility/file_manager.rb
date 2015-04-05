@@ -7,17 +7,13 @@ module QingCloud
 
             def self.file_manager
                 unless self.class_variable_defined? '@@file_manager'
+                    FileUtils.mkdir_p Contract::CONFIG_FILE_DIRECTORY
                     @@file_manager = FileManager.new
-                    @@file_manager.prepare_directory Contract::CONFIG_FILE_DIRECTORY
                 end
                 @@file_manager
             end
 
             class FileManager
-
-                def prepare_directory(directory)
-                    FileUtils.mkdir_p directory
-                end
 
                 def read_config_file
                     read_file Contract::CONFIG_FILE_PATH
@@ -25,6 +21,11 @@ module QingCloud
 
                 def write_config_file(content)
                     write_file Contract::CONFIG_FILE_PATH, content
+                end
+
+                def create_new_config_file
+                    new_config_file = read_file Contract::TEMPLATE_CONFIG_FILE_PATH
+                    write_file Contract::CONFIG_FILE_PATH, new_config_file
                 end
 
                 private

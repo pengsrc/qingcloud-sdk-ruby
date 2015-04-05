@@ -31,7 +31,6 @@ module QingCloud
                     Connector.new config_map['qy_access_key_id'], config_map['qy_secret_access_key']
                 end
 
-
                 def fetch(action, params={})
                     raise Error::ParameterError, 'Check API Request' unless action && action.length > 0
 

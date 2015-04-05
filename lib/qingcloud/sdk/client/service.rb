@@ -1,5 +1,5 @@
 module QingCloud
-    module Cli
+    module SDK
         module Client
 
             class Service < Foundation
