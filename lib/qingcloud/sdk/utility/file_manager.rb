@@ -7,7 +7,7 @@ module QingCloud
 
             def self.file_manager
                 unless self.class_variable_defined? '@@file_manager'
-                    FileUtils.mkdir_p Contract::CONFIG_FILE_DIRECTORY
+                    FileUtils.mkdir_p Contract::SUPPORT_DIRECTORY
                     @@file_manager = FileManager.new
                 end
                 @@file_manager
