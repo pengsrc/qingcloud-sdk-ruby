@@ -16,10 +16,10 @@ module QingCloud
                 # Instance
 
                 def describe_instances(
-                    instances: [],
-                    image_id: [],
-                    instance_type: [],
-                    status: [],
+                    instances_N: [],
+                    image_id_N: [],
+                    instance_type_N: [],
+                    status_N: [],
                     search_word: nil,
                     verbose: nil,
                     offset: nil,
@@ -37,9 +37,9 @@ module QingCloud
                     login_mode:,
                     login_keypair: nil,
                     login_passwd: nil,
-                    vxnets: [],
+                    vxnets_N: [],
                     security_group: nil,
-                    volumes: [],
+                    volumes_N: [],
                     need_newsid: nil,
                     need_userdata: nil,
                     userdata_type: nil,
@@ -49,28 +49,28 @@ module QingCloud
                 end
 
                 def terminate_instances(
-                    instances:,
+                    instances_N:,
                     zone:)eval(build_fetch_match)
                 end
 
                 def start_instances(
-                    instances:,
+                    instances_N:,
                     zone:)eval(build_fetch_match)
                 end
 
                 def stop_instances(
-                    instances:,
+                    instances_N:,
                     force: nil,
                     zone:)eval(build_fetch_match)
                 end
 
                 def restart_instances(
-                    instances:,
+                    instances_N:,
                     zone:)eval(build_fetch_match)
                 end
 
                 def reset_instances(
-                    instances:,
+                    instances_N:,
                     login_mode:,
                     login_keypair: nil,
                     login_passwd: nil,
@@ -79,7 +79,7 @@ module QingCloud
                 end
 
                 def resize_instances(
-                    instances:,
+                    instances_N:,
                     instance_type: nil,
                     cpu: nil,
                     memory: nil,
@@ -96,9 +96,9 @@ module QingCloud
                 # Volume
 
                 def describe_volumes(
-                    volumes: [],
+                    volumes_N: [],
                     volume_type: nil,
-                    status: [],
+                    status_N: [],
                     search_word: nil,
                     verbose: nil,
                     offset: nil,
@@ -115,24 +115,24 @@ module QingCloud
                 end
 
                 def delete_volumes(
-                    volumes:,
+                    volumes_N:,
                     zone:)eval(build_fetch_match)
                 end
 
                 def attach_volumes(
-                    volumes:,
+                    volumes_N:,
                     instance:,
                     zone:)eval(build_fetch_match)
                 end
 
                 def detach_volumes(
-                    volumes:,
+                    volumes_N:,
                     instance:,
                     zone:)eval(build_fetch_match)
                 end
 
                 def resize_volumes(
-                    volumes:,
+                    volumes_N:,
                     size:,
                     zone:)eval(build_fetch_match)
                 end
@@ -147,7 +147,7 @@ module QingCloud
                 # VXNet
 
                 def describe_vxnets(
-                    vxnets: [],
+                    vxnets_N: [],
                     vxnet_type: nil,
                     search_word: nil,
                     verbose: nil,
@@ -164,19 +164,19 @@ module QingCloud
                 end
 
                 def delete_vxnets(
-                    vxnets:,
+                    vxnets_N:,
                     zone:)eval(build_fetch_match)
                 end
 
                 def join_vxnets(
                     vxnet:,
-                    instances:,
+                    instances_N:,
                     zone:)eval(build_fetch_match)
                 end
 
                 def leave_vxnets(
                     vxnet:,
-                    instances:,
+                    instances_N:,
                     zone:)eval(build_fetch_match)
                 end
 
@@ -189,7 +189,7 @@ module QingCloud
 
                 def describe_vxnet_instances(
                     vxnet:,
-                    instances: [],
+                    instances_N: [],
                     instance_type: nil,
                     status: nil,
                     image: nil,
@@ -201,8 +201,8 @@ module QingCloud
                 # Router
 
                 def describe_routers(
-                    routers: [],
-                    status: [],
+                    routers_N: [],
+                    status_N: [],
                     search_word: nil,
                     verbose: nil,
                     offset: nil,
@@ -219,22 +219,22 @@ module QingCloud
                 end
 
                 def delete_routers(
-                    routers:,
+                    routers_N:,
                     zone:)eval(build_fetch_match)
                 end
 
                 def update_routers(
-                    routers:,
+                    routers_N:,
                     zone:)eval(build_fetch_match)
                 end
 
                 def power_off_routers(
-                    routers:,
+                    routers_N:,
                     zone:)eval(build_fetch_match)
                 end
 
                 def power_on_routers(
-                    routers:,
+                    routers_N:,
                     zone:)eval(build_fetch_match)
                 end
 
@@ -247,7 +247,7 @@ module QingCloud
                 end
 
                 def leave_routers(
-                    vxnets:,
+                    vxnets_N:,
                     router:,
                     zone:)eval(build_fetch_match)
                 end
@@ -258,6 +258,44 @@ module QingCloud
                     security_group: nil,
                     router_name: nil,
                     description: nil,
+                    zone:)eval(build_fetch_match)
+                end
+
+                def describe_router_statics(
+                    router_statics_N: [],
+                    router: nil,
+                    static_type: nil,
+                    verbose: nil,
+                    offset: nil,
+                    limit: nil,
+                    zone:)eval(build_fetch_match)
+                end
+
+                def add_router_statics(
+                    router:,
+                    statics_N_router_static_name: [],
+                    statics_N_static_type:,
+                    statics_N_val1:,
+                    statics_N_val2: nil,
+                    statics_N_val3: nil,
+                    statics_N_val4: nil,
+                    zone:)eval(build_fetch_match)
+                end
+
+                def modify_router_static_attributes(
+                    router_static:,
+                    router_static_name: nil,
+                    val1: nil,
+                    val2: nil,
+                    val3: nil,
+                    val4: nil,
+                    val5: nil,
+                    val6: nil,
+                    zone:)eval(build_fetch_match)
+                end
+
+                def delete_router_statics(
+                    router_statics_N:,
                     zone:)eval(build_fetch_match)
                 end
 
@@ -273,9 +311,9 @@ module QingCloud
                 # Eip
 
                 def describe_eips(
-                    eips: [],
+                    eips_N: [],
                     instance_id: nil,
-                    status: [],
+                    status_N: [],
                     search_word: nil,
                     offset: nil,
                     limit: nil,
@@ -292,7 +330,7 @@ module QingCloud
                 end
 
                 def release_eips(
-                    eips: [],
+                    eips_N: [],
                     zone:)eval(build_fetch_match)
                 end
 
@@ -303,18 +341,18 @@ module QingCloud
                 end
 
                 def dssociate_eips(
-                    eip:,
+                    eips_N:,
                     zone:)eval(build_fetch_match)
                 end
 
                 def change_eips_bandwidth(
-                    eips:,
+                    eips_N:,
                     bandwidth:,
                     zone:)eval(build_fetch_match)
                 end
 
                 def change_eips_billing_mode(
-                    eips:,
+                    eips_N:,
                     billing_mode:,
                     zone:)eval(build_fetch_match)
                 end
@@ -329,7 +367,7 @@ module QingCloud
                 # SecurityGroup
 
                 def describe_security_groups(
-                    security_groups: [],
+                    security_groups_N: [],
                     search_word: nil,
                     verbose: nil,
                     offset: nil,
@@ -343,13 +381,13 @@ module QingCloud
                 end
 
                 def delete_security_groups(
-                    security_groups:,
+                    security_groups_N:,
                     zone:)eval(build_fetch_match)
                 end
 
                 def apply_security_group(
                     security_group:,
-                    instances: [],
+                    instances_N: [],
                     zone:)eval(build_fetch_match)
                 end
 
@@ -362,17 +400,42 @@ module QingCloud
 
                 def describe_security_group_rules(
                     security_group: nil,
-                    security_group_rules: [],
+                    security_group_rules_N: [],
                     direction: nil,
                     offset: nil,
                     limit: nil,
                     zone:)eval(build_fetch_match)
                 end
 
+                def add_security_group_rules(
+                    security_group:,
+                    rules_N_protocol:,
+                    rules_N_priority:,
+                    rules_N_security_group_rule_name: [],
+                    rules_N_action: [],
+                    rules_N_direction: [],
+                    rules_N_val1: [],
+                    rules_N_val2: [],
+                    rules_N_val3: [],
+                    zone:)eval(build_fetch_match)
+                end
+
+                def delete_security_group_rules(
+                    security_group_rules_N:,
+                    zone:)eval(build_fetch_match)
+                end
+
+                def modify_security_group_rule_attributes(
+                    security_group_rule:,
+                    security_group_rule_name: nil,
+                    priority:,
+                    zone:)eval(build_fetch_match)
+                end
+
                 # KeyPair
 
                 def describe_key_pairs(
-                    keypairs: [],
+                    keypairs_N: [],
                     instance_id: nil,
                     encrypt_method: nil,
                     search_word: nil,
@@ -391,19 +454,19 @@ module QingCloud
                 end
 
                 def delete_key_pairs(
-                    keypairs:,
+                    keypairs_N:,
                     zone:)eval(build_fetch_match)
                 end
 
                 def attach_key_pairs(
-                    keypairs:,
-                    instances:,
+                    keypairs_N:,
+                    instances_N:,
                     zone:)eval(build_fetch_match)
                 end
 
                 def detach_key_pairs(
-                    keypairs:,
-                    instances:,
+                    keypairs_N:,
+                    instances_N:,
                     zone:)eval(build_fetch_match)
                 end
 
@@ -417,12 +480,12 @@ module QingCloud
                 # Image
 
                 def describe_images(
-                    images: [],
+                    images_N: [],
                     processor_type: nil,
                     os_family: nil,
                     visibility: nil,
                     provider: nil,
-                    status: [],
+                    status_N: [],
                     search_word: nil,
                     verbose: nil,
                     offset: nil,
@@ -437,7 +500,7 @@ module QingCloud
                 end
 
                 def delete_images(
-                    images:,
+                    images_N:,
                     zone:)eval(build_fetch_match)
                 end
 
@@ -451,7 +514,7 @@ module QingCloud
                 # LoadBalancer
 
                 def create_load_balancer(
-                    eips: [],
+                    eips_N: [],
                     vxnet: nil,
                     private_ip: nil,
                     loadbalancer_type: nil,
@@ -461,8 +524,8 @@ module QingCloud
                 end
 
                 def describe_load_balancers(
-                    loadbalancers: [],
-                    status: [],
+                    loadbalancers_N: [],
+                    status_N: [],
                     search_word: nil,
                     verbose: nil,
                     offset: nil,
@@ -471,7 +534,7 @@ module QingCloud
                 end
 
                 def delete_load_balancers(
-                    loadbalancers:,
+                    loadbalancers_N:,
                     zone:)eval(build_fetch_match)
                 end
 
@@ -485,35 +548,110 @@ module QingCloud
                 end
 
                 def start_load_balancers(
-                    loadbalancers:,
+                    loadbalancers_N:,
                     zone:)eval(build_fetch_match)
                 end
 
                 def stop_load_balancers(
-                    loadbalancers:,
+                    loadbalancers_N:,
                     zone:)eval(build_fetch_match)
                 end
 
                 def update_load_balancers(
-                    loadbalancers:,
+                    loadbalancers_N:,
                     zone:)eval(build_fetch_match)
                 end
 
                 def resize_load_balancers(
-                    loadbalancers:,
+                    loadbalancers_N:,
                     loadbalancer_type:,
                     zone:)eval(build_fetch_match)
                 end
 
                 def associate_eips_to_load_balancer(
-                    eips:,
+                    eips_N:,
                     loadbalancer:,
                     zone:)eval(build_fetch_match)
                 end
 
                 def dissociate_eips_from_load_balancer(
-                    eips:,
+                    eips_N:,
                     loadbalancer:,
+                    zone:)eval(build_fetch_match)
+                end
+
+                def add_load_balancer_listeners(
+                    loadbalancer:,
+                    listeners_N_listener_port:,
+                    listeners_N_listener_protocol:,
+                    listeners_N_backend_protocol:,
+                    listeners_N_loadbalancer_listener_name: [],
+                    listeners_N_balance_mode: [],
+                    listeners_N_session_sticky: [],
+                    listeners_N_forwardfor: [],
+                    listeners_N_healthy_check_method: [],
+                    listeners_N_healthy_check_option: [],
+                    listeners_N_listener_option: [],
+                    zone:)eval(build_fetch_match)
+                end
+
+                def add_load_balancer_listeners(
+                    loadbalancer_listeners_N: nil,
+                    loadbalancer: nil,
+                    verbose: nil,
+                    offset: nil,
+                    limit: nil,
+                    zone:)eval(build_fetch_match)
+                end
+
+                def delete_load_balancer_listeners(
+                    loadbalancer_listeners_N:,
+                    zone:)eval(build_fetch_match)
+                end
+
+                def modify_load_balancer_listener_attributes(
+                    loadbalancer_listener:,
+                    loadbalancer_listener_name: nil,
+                    balance_mode: nil,
+                    session_sticky: nil,
+                    forwardfor: nil,
+                    healthy_check_method: nil,
+                    healthy_check_option: nil,
+                    listeners_N_listener_option: [],
+                    zone:)eval(build_fetch_match)
+                end
+
+                def add_load_balancer_backends(
+                    loadbalancer_listener:,
+                    backends_N_resource_id:,
+                    backends_N_loadbalancer_backend_name: [],
+                    backends_N_port:,
+                    backends_N_weight:,
+                    listeners_N_listener_option: [],
+                    zone:)eval(build_fetch_match)
+                end
+
+                def describe_load_balancer_backends(
+                    loadbalancer_backends_N: [],
+                    loadbalancer_listener: nil,
+                    loadbalancer: nil,
+                    verbose: nil,
+                    offset: nil,
+                    limit: nil,
+                    zone:)eval(build_fetch_match)
+                end
+
+                def delete_load_balancer_backends(
+                    loadbalancer_backends_N: [],
+                    zone:)eval(build_fetch_match)
+                end
+
+                def modify_load_balancer_backend_attributes(
+                    loadbalancer_backend:,
+                    port: nil,
+                    weight: nil,
+                    disabled: nil,
+                    loadbalancer_policy_id: nil,
                     zone:)eval(build_fetch_match)
                 end
 
@@ -521,7 +659,7 @@ module QingCloud
 
                 def get_monitor(
                     resource:,
-                    meters:,
+                    meters_N:,
                     step:,
                     start_time:,
                     end_time:,
@@ -530,7 +668,7 @@ module QingCloud
 
                 def get_load_balancer_monitor(
                     resource:,
-                    meters:,
+                    meters_N:,
                     step:,
                     start_time:,
                     end_time:,
@@ -539,7 +677,7 @@ module QingCloud
 
                 def get_rdb_monitor(
                     resource:,
-                    meters:,
+                    meters_N:,
                     step:,
                     start_time:,
                     end_time:,
@@ -549,10 +687,10 @@ module QingCloud
                 # Snapshot
 
                 def describe_snapshots(
-                    snapshots: [],
+                    snapshots_N: [],
                     resource_id: nil,
                     snapshot_type: nil,
-                    status: [],
+                    status_N: [],
                     search_word: nil,
                     verbose: nil,
                     offset: nil,
@@ -561,19 +699,19 @@ module QingCloud
                 end
 
                 def create_snapshots(
-                    resources:,
+                    resources_N:,
                     snapshot_name: nil,
                     is_full: nil,
                     zone:)eval(build_fetch_match)
                 end
 
                 def delete_snapshots(
-                    snapshots:,
+                    snapshots_N:,
                     zone:)eval(build_fetch_match)
                 end
 
                 def apply_snapshots(
-                    snapshots:,
+                    snapshots_N:,
                     zone:)eval(build_fetch_match)
                 end
 
@@ -607,8 +745,8 @@ module QingCloud
                 # Job
 
                 def describe_jobs(
-                    jobs: [],
-                    status: [],
+                    jobs_N: [],
+                    status_N: [],
                     job_action: nil,
                     verbose: nil,
                     offset: nil,
@@ -619,8 +757,8 @@ module QingCloud
                 # Zone
 
                 def describe_zones(
-                    zones: [],
-                    status: []) eval(build_fetch_match)
+                    zones_N: [],
+                    status_N: []) eval(build_fetch_match)
                 end
 
                 # RemoteDataBase
@@ -640,8 +778,8 @@ module QingCloud
                 end
 
                 def describe_rdbs(
-                    rdbs: [],
-                    status: [],
+                    rdbs_N: [],
+                    status_N: [],
                     rdb_name: nil,
                     verbose: nil,
                     offset: nil,
@@ -650,35 +788,35 @@ module QingCloud
                 end
 
                 def delete_rdbs(
-                    rdbs:,
+                    rdbs_N:,
                     zone:)eval(build_fetch 'DeleteRDBs')
                 end
 
                 def start_rdbs(
-                    rdbs:,
+                    rdbs_N:,
                     zone:)eval(build_fetch 'StartRDBs')
                 end
 
                 def stop_rdbs(
-                    rdbs:,
+                    rdbs_N:,
                     zone:)eval(build_fetch 'StopRDBs')
                 end
 
                 def resize_rdbs(
-                    rdbs:,
+                    rdbs_N:,
                     rdb_type: nil,
                     storage_size: nil,
                     zone:)eval(build_fetch 'ResizeRDBs')
                 end
 
                 def rdbs_leave_vxnet(
-                    rdbs:,
+                    rdbs_N:,
                     vxnet:,
                     zone:)eval(build_fetch 'RDBsLeaveVxnet')
                 end
 
                 def rdbs_join_vxnet(
-                    rdbs:,
+                    rdbs_N:,
                     vxnet:,
                     zone:)eval(build_fetch 'RDBsJoinVxnet')
                 end

@@ -45,9 +45,16 @@ module QingCloud
 
                     request_body = params.sort.map { |key, value|
                         if value.is_a? Array
-                            value.map { |v|
-                                "#{CGI.escape key.to_s}.#{value.index(v)+1}=#{CGI.escape v.to_s}"
-                            }.join('&')
+                            if key.to_s.include? '_N_'
+                                parts = key.to_s.split '_N_'
+                                value.map { |v|
+                                    "#{CGI.escape parts[0].to_s}.#{value.index(v)+1}.#{CGI.escape parts[1].to_s}=#{CGI.escape v.to_s}"
+                                }.join('&')
+                            elsif key.to_s.include? '_N'
+                                value.map { |v|
+                                    "#{CGI.escape key.to_s.gsub('_N', '').to_s}.#{value.index(v)+1}=#{CGI.escape v.to_s}"
+                                }.join('&')
+                            end
                         else
                             "#{CGI.escape key.to_s}=#{CGI.escape value.to_s}"
                         end

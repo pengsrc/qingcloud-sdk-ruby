@@ -37,6 +37,19 @@ Using gem to remove this package:
 
     $ gem uninstall qingcloud-sdk
 
+## Notice
+* All QingCloud API actions are available now.
+* API action name is mapped to ruby method.
+* API parameter name is mapped to ruby method parameter.
+* API optional parameter can be ignored when call ruby method.
+
+Example:
+	
+	Action: "DescribeInstances" -> "describe_instances"
+	Parameter: "zone" -> "zone"
+	Array Parameter: "instances.n" -> "instances_N"
+	Array Parameter: "statics.n.static_type" -> "statics_N_static_type"
+
 ## Getting Started
 
 Before your start, please go to [QingCloud Console](https://console.qingcloud.com/access_keys/) to create a pair of QingCloud API keys.
@@ -62,20 +75,18 @@ puts service.response
 
 # Run Instances
 
-service.run_instances(
-    image_id: 'centos7x64b',
-    cpu: 1,
-    memory: 1024,
-    login_mode: 'keypair',
-    login_keypair: 'keypair-id',
-    zone: 'ap1'
-)
-
+service.run_instances image_id: 'centos7x64b', 
+                      cpu: 1, 
+                      memory: 1024, 
+                      login_mode: 'keypair', 
+                      login_keypair: 'keypair-id', 
+                      zone: 'ap1'
+                      
 puts service.response
 
 # Terminate Instances
 
-service.describe_instances instances: ['instance-id'], zone: 'ap1'
+service.describe_instances instances_N: ['instance-id'], zone: 'ap1'
 
 puts service.response
 ```
