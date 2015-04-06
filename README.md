@@ -8,6 +8,23 @@ SDK for QingCloud
 
 	$ gem install qingcloud-sdk
 
+## Install using Gemfile
+
+Add this line to your application's Gemfile:
+
+```ruby
+gem 'qingcloud-sdk'
+```
+
+or
+
+```ruby
+gem 'qingcloud-sdk', git: 'https://github.com/prettyxw/qingcloud-sdk-ruby'
+```
+
+And then execute:
+
+    $ bundle install
 
 ## Install from Source Code
 
@@ -18,18 +35,6 @@ Get Code from Github:
 Build and Install with Bundle:
 
     $ cd qingcloud-sdk-ruby && bundle exec rake install
-
-## Install using Gemfile
-
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'qingcloud-sdk', git: 'https://github.com/prettyxw/qingcloud-sdk-ruby'
-```
-
-And then execute:
-
-    $ bundle install
 
 ## Uninstall
 
