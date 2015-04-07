@@ -3,9 +3,6 @@ module QingCloud
         module Error
 
             class SDKError < StandardError
-                def initialize(message=nil)
-                    super "Encounter Error: #{message || 'Unknown'}."
-                end
             end
 
             class NetworkError < SDKError
