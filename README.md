@@ -34,7 +34,9 @@ Get Code from Github:
 
 Build and Install with Bundle:
 
-    $ cd qingcloud-sdk-ruby && bundle exec rake install
+    $ cd qingcloud-sdk-ruby
+    $ bundle install
+    $ bundle exec rake install
 
 ## Uninstall
 
