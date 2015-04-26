@@ -16,7 +16,7 @@ Gem::Specification.new do |spec|
     spec.summary = 'SDK for QingCloud'
     spec.description = 'SDK for QingCloud'
     spec.homepage = 'https://github.com/prettyxw/qingcloud-sdk-ruby'
-    spec.license = 'GPL'
+    spec.license = 'MIT'
 
     spec.files = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
     spec.bindir = 'exe'
