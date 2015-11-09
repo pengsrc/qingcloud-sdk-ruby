@@ -751,14 +751,14 @@ module QingCloud
                     verbose: nil,
                     offset: nil,
                     limit: nil,
-                    zone:) eval(build_fetch_match)
+                    zone:)eval(build_fetch_match)
                 end
 
                 # Zone
 
                 def describe_zones(
                     zones_N: [],
-                    status_N: []) eval(build_fetch_match)
+                    status_N: [])eval(build_fetch_match)
                 end
 
                 # RemoteDataBase
@@ -836,21 +836,21 @@ module QingCloud
                     mongo:,
                     offset: nil,
                     limit: nil,
-                    zone:)eval(build_fetch 'DescribeMongoNodes')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def describe_mongo_parameters(
                     mongo:,
                     offset: nil,
                     limit: nil,
-                    zone:)eval(build_fetch 'DescribeMongoParameters')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def resize_mongos(
                     mongos_N:,
                     mongo_type: nil,
                     storage_size: nil,
-                    zone:)eval(build_fetch 'ResizeMongos')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def create_mongo(
@@ -862,17 +862,17 @@ module QingCloud
                     description: nil,
                     auto_backup_time: nil,
                     private_ips: nil,
-                    zone:)eval(build_fetch 'CreateMongo')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def stop_mongos(
                     mongos_N:,
-                    zone:)eval(build_fetch 'StopMongos')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def start_mongos(
                     mongos_N:,
-                    zone:)eval(build_fetch 'StartMongos')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def describe_mongos(
@@ -883,12 +883,12 @@ module QingCloud
                     verbose: nil,
                     offset: nil,
                     limit: nil,
-                    zone:)eval(build_fetch 'DescribeMongos')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def delete_mongos(
                     mongos_N:,
-                    zone:)eval(build_fetch 'DeleteMongos')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def create_mongo_from_snapshot(
@@ -897,27 +897,27 @@ module QingCloud
                     mongo_name: nil,
                     description: nil,
                     auto_backup_time: nil,
-                    zone:)eval(build_fetch 'CreateMongoFromSnapshot')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def change_mongo_vxnet(
                     mongo:,
                     vxnet:,
                     private_ips: nil,
-                    zone:)eval(build_fetch 'ChangeMongoVxnet')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def add_mongo_instances(
                     mongo:,
                     node_count: nil,
                     private_ips: nil,
-                    zone:)eval(build_fetch 'AddMongoInstances')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def remove_mongo_instances(
                     mongo:,
                     mongo_instances:,
-                    zone:)eval(build_fetch 'RemoveMongoInstances')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def modify_mongo_attributes(
@@ -925,13 +925,13 @@ module QingCloud
                     mongo_name: nil,
                     description: nil,
                     auto_backup_time: nil,
-                    zone:)eval(build_fetch 'ModifyMongoAttributes')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def modify_mongo_instances(
                     mongo:,
                     private_ips: nil,
-                    zone:)eval(build_fetch 'ModifyMongoInstances')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def get_mongo_monitor(
@@ -940,7 +940,7 @@ module QingCloud
                     step:,
                     start_time:,
                     end_time:,
-                    zone:)eval(build_fetch 'GetMongoMonitor')
+                    zone:)eval(build_fetch_match)
                 end
 
                 # Cache
@@ -953,7 +953,7 @@ module QingCloud
                     verbose: nil,
                     offset: nil,
                     limit: nil,
-                    zone:)eval(build_fetch 'DescribeCaches')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def create_cache(
@@ -965,40 +965,40 @@ module QingCloud
                     cache_parameter_group: nil,
                     private_ips_N_cache_role: [],
                     private_ips_N_private_ips: [],
-                    zone:)eval(build_fetch 'CreateCache')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def stop_caches(
                     caches_N:,
-                    zone:)eval(build_fetch 'StopCaches')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def start_caches(
                     caches_N:,
-                    zone:)eval(build_fetch 'StartCaches')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def restart_caches(
                     caches_N:,
-                    zone:)eval(build_fetch 'RestartCaches')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def delete_caches(
                     caches_N:,
-                    zone:)eval(build_fetch 'DeleteCaches')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def resize_caches(
                     caches_N:,
                     cache_size:,
-                    zone:)eval(build_fetch 'ResizeCaches')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def update_cache(
                     cache:,
                     private_ips_N_cache_node_id: [],
                     private_ips_N_private_ip: [],
-                    zone:)eval(build_fetch 'UpdateCache')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def change_cache_vxnet(
@@ -1006,14 +1006,14 @@ module QingCloud
                     vxnet:,
                     private_ips_N_cache_node_id: [],
                     private_ips_N_private_ip: [],
-                    zone:)eval(build_fetch 'ChangeCacheVxnet')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def modify_cache_attributes(
                     cache:,
                     cache_name: nil,
                     description: nil,
-                    zone:)eval(build_fetch 'ModifyCacheAttributes')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def describe_cache_nodes(
@@ -1024,7 +1024,7 @@ module QingCloud
                     verbose: nil,
                     offset: nil,
                     limit: nil,
-                    zone:)eval(build_fetch 'DescribeCacheNodes')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def add_cache_nodes(
@@ -1032,25 +1032,25 @@ module QingCloud
                     node_count:,
                     private_ips_N_cache_role: [],
                     private_ips_N_private_ips: nil,
-                    zone:)eval(build_fetch 'AddCacheNodes')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def delete_cache_nodes(
                     cache:,
                     cache_nodes_N:,
-                    zone:)eval(build_fetch 'DeleteCacheNodes')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def restart_cache_nodes(
                     cache:,
                     cache_nodes_N:,
-                    zone:)eval(build_fetch 'RestartCacheNodes')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def modify_cache_node_attributes(
                     cache_node:,
                     cache_node_name: nil,
-                    zone:)eval(build_fetch 'ModifyCacheNodeAttributes')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def create_cache_from_snapshot(
@@ -1061,7 +1061,7 @@ module QingCloud
                     cache_parameter_group: nil,
                     private_ips_N_cache_role: [],
                     private_ips_N_private_ips: [],
-                    zone:)eval(build_fetch 'CreateCacheFromSnapshot')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def describe_cache_parameter_groups(
@@ -1071,49 +1071,49 @@ module QingCloud
                     verbose: nil,
                     offset: nil,
                     limit: nil,
-                    zone:)eval(build_fetch 'DescribeCacheParameterGroups')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def create_cache_parameter_group(
                     cache_type:,
                     cache_parameter_group_name: nil,
-                    zone:)eval(build_fetch 'CreateCacheParameterGroup')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def apply_cache_parameter_group(
                     cache_parameter_group:,
                     caches_N: [],
-                    zone:)eval(build_fetch 'ApplyCacheParameterGroup')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def delete_cache_parameter_groups(
                     cache_parameter_groups_N:,
-                    zone:)eval(build_fetch 'DeleteCacheParameterGroups')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def modify_cache_parameter_group_attributes(
                     cache_parameter_group:,
                     cache_parameter_group_name: nil,
                     description: nil,
-                    zone:)eval(build_fetch 'ModifyCacheParameterGroupAttributes')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def describe_cache_parameters(
                     cache_parameter_group:,
-                    zone:)eval(build_fetch 'DescribeCacheParameters')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def update_cache_parameters(
                     cache_parameter_group:,
                     parameters_N_cache_parameter_name:,
                     parameters_N_cache_parameter_value:,
-                    zone:)eval(build_fetch 'UpdateCacheParameters')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def reset_cache_parameters(
                     cache_parameter_group:,
                     cache_parameter_names_N: [],
-                    zone:)eval(build_fetch 'ResetCacheParameters')
+                    zone:)eval(build_fetch_match)
                 end
 
                 # S2
@@ -1125,7 +1125,7 @@ module QingCloud
                     s2_server_type: nil,
                     private_ip: nil,
                     description: nil,
-                    zone:)eval(build_fetch 'CreateS2Server')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def describe_s2_servers(
@@ -1136,47 +1136,47 @@ module QingCloud
                     verbose: nil,
                     offset: nil,
                     limit: nil,
-                    zone:)eval(build_fetch 'DescribeS2Servers')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def modify_s2_server(
                     s2_server:,
                     name: nil,
                     description: nil,
-                    zone:)eval(build_fetch 'ModifyS2Server')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def resize_s2_servers(
                     s2_server:,
                     s2_server_type:,
-                    zone:)eval(build_fetch 'ResizeS2Servers')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def delete_s2_servers(
                     s2servers_N:,
-                    zone:)eval(build_fetch 'DeleteS2Servers')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def power_on_s2_servers(
                     s2_servers_N:,
-                    zone:)eval(build_fetch 'PowerOnS2Servers')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def power_off_s2_servers(
                     s2_servers_N:,
-                    zone:)eval(build_fetch 'PowerOffS2Servers')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def update_s2_servers(
                     s2_servers_N:,
-                    zone:)eval(build_fetch 'UpdateS2Servers')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def change_s2_server_vxnet(
                     s2_server:,
                     vxnet:,
                     private_ip: nil,
-                    zone:)eval(build_fetch 'ChangeS2ServerVxnet')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def create_s2_shared_target(
@@ -1186,7 +1186,7 @@ module QingCloud
                     description: nil,
                     volumes_N: [],
                     initiator_names_N: [],
-                    zone:)eval(build_fetch 'CreateS2SharedTarget')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def describe_s2_shared_targets(
@@ -1196,41 +1196,41 @@ module QingCloud
                     verbose: nil,
                     offset: nil,
                     limit: nil,
-                    zone:)eval(build_fetch 'DescribeS2SharedTargets')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def delete_s2_shared_targets(
                     shared_targets_N:,
-                    zone:)eval(build_fetch 'DeleteS2SharedTargets')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def enable_s2_shared_targets(
                     shared_targets_N:,
-                    zone:)eval(build_fetch 'EnableS2SharedTargets')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def disable_s2_shared_targets(
                     shared_targets_N:,
-                    zone:)eval(build_fetch 'DisableS2SharedTargets')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def modify_s2_shared_targets(
                     shared_targets_N:,
                     operation:,
                     initiator_names_N:,
-                    zone:)eval(build_fetch 'ModifyS2SharedTargets')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def attach_to_s2_shared_target(
                     shared_target:,
                     volumes_N:,
-                    zone:)eval(build_fetch 'AttachToS2SharedTarget')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def detach_from_s2_shared_target(
                     shared_target:,
                     volumes_N:,
-                    zone:)eval(build_fetch 'DetachFromS2SharedTarget')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def describe_s2_default_parameters(
@@ -1238,7 +1238,7 @@ module QingCloud
                     target_type:,
                     offset:,
                     limit:,
-                    zone:)eval(build_fetch 'DescribeS2DefaultParameters')
+                    zone:)eval(build_fetch_match)
                 end
 
                 # Spark
@@ -1249,23 +1249,23 @@ module QingCloud
                     spark_node_name: nil,
                     private_ips_N_role: [],
                     private_ips_N_private_ips: [],
-                    zone:)eval(build_fetch 'AddSparkNodes')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def delete_spark_nodes(
                     spark:,
                     spark_nodes_N:,
-                    zone:)eval(build_fetch 'AddSparkNodes')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def start_sparks(
                     sparks_N:,
-                    zone:)eval(build_fetch 'StartSparks')
+                    zone:)eval(build_fetch_match)
                 end
 
                 def stop_sparks(
                     sparks_N:,
-                    zone:)eval(build_fetch 'StopSparks')
+                    zone:)eval(build_fetch_match)
                 end
             end
 
