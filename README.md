@@ -48,10 +48,12 @@ Using gem to remove this package:
 
 Example:
 	
-	Action: "DescribeInstances" -> "describe_instances"
-	Parameter: "zone" -> "zone"
-	Array Parameter: "instances.n" -> "instances_N"
-	Array Parameter: "statics.n.static_type" -> "statics_N_static_type"
+```ruby
+Action: "DescribeInstances" -> "describe_instances"
+Parameter: "zone" -> "zone"
+Array Parameter: "instances.n" -> "instances_N"
+Array Parameter: "statics.n.static_type" -> "statics_N_static_type"
+```
 
 ## Getting Started
 
@@ -59,37 +61,39 @@ Before your start, please go to [QingCloud Console](https://console.qingcloud.co
 
 ## Code Example
 
-	require 'qingcloud/sdk'
+```ruby
+require 'qingcloud/sdk'
 
-	# Create Connection and Service
+# Create Connection and Service
 
-	connector = QingCloud::SDK::IaaS::Connector.init 'qy_access_key_id',
-	                                                 'qy_secret_access_key'
+connector = QingCloud::SDK::IaaS::Connector.init 'qy_access_key_id',
+                                                 'qy_secret_access_key'
 
-	service = QingCloud::SDK::IaaS::Service.new connector
+service = QingCloud::SDK::IaaS::Service.new connector
 
-	# Describe Instances
+# Describe Instances
 
-	service.describe_instances zone: 'ap1'
+service.describe_instances zone: 'ap1'
 
-	puts service.response
+puts service.response
 
-	# Run Instances
+# Run Instances
 
-	service.run_instances image_id: 'centos7x64b', 
-	                      cpu: 1, 
-	                      memory: 1024, 
-	                      login_mode: 'keypair', 
-	                      login_keypair: 'keypair-id', 
-	                      zone: 'ap1'
-                      
-	puts service.response
+service.run_instances image_id: 'centos7x64b', 
+                      cpu: 1, 
+                      memory: 1024, 
+                      login_mode: 'keypair', 
+                      login_keypair: 'keypair-id', 
+                      zone: 'ap1'
+                     
+puts service.response
 
-	# Terminate Instances
+# Terminate Instances
 
-	service.describe_instances instances_N: ['instance-id'], zone: 'ap1'
+service.describe_instances instances_N: ['instance-id'], zone: 'ap1'
 
-	puts service.response
+puts service.response
+```
 
 ## Contributing
 
