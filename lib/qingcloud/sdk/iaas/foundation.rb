@@ -1,6 +1,6 @@
 module QingCloud
     module SDK
-        module Client
+        module IaaS
 
             class Foundation
 

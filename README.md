@@ -12,15 +12,11 @@ SDK for QingCloud
 
 Add this line to your application's Gemfile:
 
-```ruby
-gem 'qingcloud-sdk'
-```
+	gem 'qingcloud-sdk'
 
 or
 
-```ruby
-gem 'qingcloud-sdk', git: 'https://github.com/prettyxw/qingcloud-sdk-ruby'
-```
+	gem 'qingcloud-sdk', git: 'https://github.com/prettyxw/qingcloud-sdk-ruby'
 
 And then execute:
 
@@ -63,39 +59,37 @@ Before your start, please go to [QingCloud Console](https://console.qingcloud.co
 
 ## Code Example
 
-```ruby
-require 'qingcloud/sdk'
+	require 'qingcloud/sdk'
 
-# Create Connection and Service
+	# Create Connection and Service
 
-connector = QingCloud::SDK::Client::Connector.init 'qy_access_key_id',
-                                                   'qy_secret_access_key'
+	connector = QingCloud::SDK::IaaS::Connector.init 'qy_access_key_id',
+	                                                 'qy_secret_access_key'
 
-service = QingCloud::SDK::Client::Service.new connector
+	service = QingCloud::SDK::IaaS::Service.new connector
 
-# Describe Instances
+	# Describe Instances
 
-service.describe_instances zone: 'ap1'
+	service.describe_instances zone: 'ap1'
 
-puts service.response
+	puts service.response
 
-# Run Instances
+	# Run Instances
 
-service.run_instances image_id: 'centos7x64b', 
-                      cpu: 1, 
-                      memory: 1024, 
-                      login_mode: 'keypair', 
-                      login_keypair: 'keypair-id', 
-                      zone: 'ap1'
+	service.run_instances image_id: 'centos7x64b', 
+	                      cpu: 1, 
+	                      memory: 1024, 
+	                      login_mode: 'keypair', 
+	                      login_keypair: 'keypair-id', 
+	                      zone: 'ap1'
                       
-puts service.response
+	puts service.response
 
-# Terminate Instances
+	# Terminate Instances
 
-service.describe_instances instances_N: ['instance-id'], zone: 'ap1'
+	service.describe_instances instances_N: ['instance-id'], zone: 'ap1'
 
-puts service.response
-```
+	puts service.response
 
 ## Contributing
 

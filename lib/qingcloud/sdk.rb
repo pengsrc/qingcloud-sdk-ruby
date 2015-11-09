@@ -10,6 +10,6 @@ require 'qingcloud/sdk/utility/file_manager'
 require 'qingcloud/sdk/utility/json_parser'
 
 # Client
-require 'qingcloud/sdk/client/connector'
-require 'qingcloud/sdk/client/foundation'
-require 'qingcloud/sdk/client/service'
+require 'qingcloud/sdk/iaas/connector'
+require 'qingcloud/sdk/iaas/foundation'
+require 'qingcloud/sdk/iaas/service'

@@ -5,7 +5,7 @@ require 'net/http'
 
 module QingCloud
     module SDK
-        module Client
+        module IaaS
 
             class Connector
 
@@ -25,6 +25,9 @@ module QingCloud
                 end
 
                 def self.init_with_config_file
+                    unless Utility.file_manager.read_config_file
+                        Utility.file_manager.create_new_config_file
+                    end
                     config_map = {}
                     content = Utility.file_manager.read_config_file
                     config_map = Utility.json_parser.decode content if content
@@ -68,7 +71,7 @@ module QingCloud
                         )
                     ).strip
 
-                    request_url = "#{Contract::API_URL}#{request_body}&signature=#{CGI.escape signature}"
+                    request_url = "#{Contract::IaaS_API_URL}#{request_body}&signature=#{CGI.escape signature}"
 
                     # Log
                     Utility.logger.info request_url

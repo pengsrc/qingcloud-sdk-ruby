@@ -1,6 +1,6 @@
 module QingCloud
     module SDK
-        module Client
+        module IaaS
 
             class Service < Foundation
 
@@ -830,6 +830,443 @@ module QingCloud
                     zone:)eval(build_fetch 'CreateRDBFromSnapshot')
                 end
 
+                # Mongo
+
+                def describe_mongo_nodes(
+                    mongo:,
+                    offset: nil,
+                    limit: nil,
+                    zone:)eval(build_fetch 'DescribeMongoNodes')
+                end
+
+                def describe_mongo_parameters(
+                    mongo:,
+                    offset: nil,
+                    limit: nil,
+                    zone:)eval(build_fetch 'DescribeMongoParameters')
+                end
+
+                def resize_mongos(
+                    mongos_N:,
+                    mongo_type: nil,
+                    storage_size: nil,
+                    zone:)eval(build_fetch 'ResizeMongos')
+                end
+
+                def create_mongo(
+                    vxnet:,
+                    mongo_version: nil,
+                    mongo_type:,
+                    storage_size:,
+                    mongo_name: nil,
+                    description: nil,
+                    auto_backup_time: nil,
+                    private_ips: nil,
+                    zone:)eval(build_fetch 'CreateMongo')
+                end
+
+                def stop_mongos(
+                    mongos_N:,
+                    zone:)eval(build_fetch 'StopMongos')
+                end
+
+                def start_mongos(
+                    mongos_N:,
+                    zone:)eval(build_fetch 'StartMongos')
+                end
+
+                def describe_mongos(
+                    mongos_N: [],
+                    status_N: [],
+                    mongo_name: nil,
+                    tags_N: [],
+                    verbose: nil,
+                    offset: nil,
+                    limit: nil,
+                    zone:)eval(build_fetch 'DescribeMongos')
+                end
+
+                def delete_mongos(
+                    mongos_N:,
+                    zone:)eval(build_fetch 'DeleteMongos')
+                end
+
+                def create_mongo_from_snapshot(
+                    vxnet:,
+                    mongo_type:,
+                    mongo_name: nil,
+                    description: nil,
+                    auto_backup_time: nil,
+                    zone:)eval(build_fetch 'CreateMongoFromSnapshot')
+                end
+
+                def change_mongo_vxnet(
+                    mongo:,
+                    vxnet:,
+                    private_ips: nil,
+                    zone:)eval(build_fetch 'ChangeMongoVxnet')
+                end
+
+                def add_mongo_instances(
+                    mongo:,
+                    node_count: nil,
+                    private_ips: nil,
+                    zone:)eval(build_fetch 'AddMongoInstances')
+                end
+
+                def remove_mongo_instances(
+                    mongo:,
+                    mongo_instances:,
+                    zone:)eval(build_fetch 'RemoveMongoInstances')
+                end
+
+                def modify_mongo_attributes(
+                    mongo:,
+                    mongo_name: nil,
+                    description: nil,
+                    auto_backup_time: nil,
+                    zone:)eval(build_fetch 'ModifyMongoAttributes')
+                end
+
+                def modify_mongo_instances(
+                    mongo:,
+                    private_ips: nil,
+                    zone:)eval(build_fetch 'ModifyMongoInstances')
+                end
+
+                def get_mongo_monitor(
+                    resource:,
+                    meters_N:,
+                    step:,
+                    start_time:,
+                    end_time:,
+                    zone:)eval(build_fetch 'GetMongoMonitor')
+                end
+
+                # Cache
+
+                def describe_caches(
+                    caches_N: [],
+                    status_N: [],
+                    search_word: nil,
+                    tags_N: [],
+                    verbose: nil,
+                    offset: nil,
+                    limit: nil,
+                    zone:)eval(build_fetch 'DescribeCaches')
+                end
+
+                def create_cache(
+                    vxnet:,
+                    cache_size:,
+                    cache_type:,
+                    node_count: nil,
+                    cache_name: nil,
+                    cache_parameter_group: nil,
+                    private_ips_N_cache_role: [],
+                    private_ips_N_private_ips: [],
+                    zone:)eval(build_fetch 'CreateCache')
+                end
+
+                def stop_caches(
+                    caches_N:,
+                    zone:)eval(build_fetch 'StopCaches')
+                end
+
+                def start_caches(
+                    caches_N:,
+                    zone:)eval(build_fetch 'StartCaches')
+                end
+
+                def restart_caches(
+                    caches_N:,
+                    zone:)eval(build_fetch 'RestartCaches')
+                end
+
+                def delete_caches(
+                    caches_N:,
+                    zone:)eval(build_fetch 'DeleteCaches')
+                end
+
+                def resize_caches(
+                    caches_N:,
+                    cache_size:,
+                    zone:)eval(build_fetch 'ResizeCaches')
+                end
+
+                def update_cache(
+                    cache:,
+                    private_ips_N_cache_node_id: [],
+                    private_ips_N_private_ip: [],
+                    zone:)eval(build_fetch 'UpdateCache')
+                end
+
+                def change_cache_vxnet(
+                    cache:,
+                    vxnet:,
+                    private_ips_N_cache_node_id: [],
+                    private_ips_N_private_ip: [],
+                    zone:)eval(build_fetch 'ChangeCacheVxnet')
+                end
+
+                def modify_cache_attributes(
+                    cache:,
+                    cache_name: nil,
+                    description: nil,
+                    zone:)eval(build_fetch 'ModifyCacheAttributes')
+                end
+
+                def describe_cache_nodes(
+                    cache: nil,
+                    cache_nodes_N: [],
+                    status_N: [],
+                    search_word: nil,
+                    verbose: nil,
+                    offset: nil,
+                    limit: nil,
+                    zone:)eval(build_fetch 'DescribeCacheNodes')
+                end
+
+                def add_cache_nodes(
+                    cache:,
+                    node_count:,
+                    private_ips_N_cache_role: [],
+                    private_ips_N_private_ips: nil,
+                    zone:)eval(build_fetch 'AddCacheNodes')
+                end
+
+                def delete_cache_nodes(
+                    cache:,
+                    cache_nodes_N:,
+                    zone:)eval(build_fetch 'DeleteCacheNodes')
+                end
+
+                def restart_cache_nodes(
+                    cache:,
+                    cache_nodes_N:,
+                    zone:)eval(build_fetch 'RestartCacheNodes')
+                end
+
+                def modify_cache_node_attributes(
+                    cache_node:,
+                    cache_node_name: nil,
+                    zone:)eval(build_fetch 'ModifyCacheNodeAttributes')
+                end
+
+                def create_cache_from_snapshot(
+                    snapshot:,
+                    vxnet:,
+                    node_count: nil,
+                    cache_name: nil,
+                    cache_parameter_group: nil,
+                    private_ips_N_cache_role: [],
+                    private_ips_N_private_ips: [],
+                    zone:)eval(build_fetch 'CreateCacheFromSnapshot')
+                end
+
+                def describe_cache_parameter_groups(
+                    cache_parameter_groups_N: [],
+                    cache_type: nil,
+                    search_word: nil,
+                    verbose: nil,
+                    offset: nil,
+                    limit: nil,
+                    zone:)eval(build_fetch 'DescribeCacheParameterGroups')
+                end
+
+                def create_cache_parameter_group(
+                    cache_type:,
+                    cache_parameter_group_name: nil,
+                    zone:)eval(build_fetch 'CreateCacheParameterGroup')
+                end
+
+                def apply_cache_parameter_group(
+                    cache_parameter_group:,
+                    caches_N: [],
+                    zone:)eval(build_fetch 'ApplyCacheParameterGroup')
+                end
+
+                def delete_cache_parameter_groups(
+                    cache_parameter_groups_N:,
+                    zone:)eval(build_fetch 'DeleteCacheParameterGroups')
+                end
+
+                def modify_cache_parameter_group_attributes(
+                    cache_parameter_group:,
+                    cache_parameter_group_name: nil,
+                    description: nil,
+                    zone:)eval(build_fetch 'ModifyCacheParameterGroupAttributes')
+                end
+
+                def describe_cache_parameters(
+                    cache_parameter_group:,
+                    zone:)eval(build_fetch 'DescribeCacheParameters')
+                end
+
+                def update_cache_parameters(
+                    cache_parameter_group:,
+                    parameters_N_cache_parameter_name:,
+                    parameters_N_cache_parameter_value:,
+                    zone:)eval(build_fetch 'UpdateCacheParameters')
+                end
+
+                def reset_cache_parameters(
+                    cache_parameter_group:,
+                    cache_parameter_names_N: [],
+                    zone:)eval(build_fetch 'ResetCacheParameters')
+                end
+
+                # S2
+
+                def create_s2_server(
+                    vxnet_id:,
+                    service_type:,
+                    name: nil,
+                    s2_server_type: nil,
+                    private_ip: nil,
+                    description: nil,
+                    zone:)eval(build_fetch 'CreateS2Server')
+                end
+
+                def describe_s2_servers(
+                    s2_servers_N: [],
+                    status_N: [],
+                    search_word: nil,
+                    tags_N: nil,
+                    verbose: nil,
+                    offset: nil,
+                    limit: nil,
+                    zone:)eval(build_fetch 'DescribeS2Servers')
+                end
+
+                def modify_s2_server(
+                    s2_server:,
+                    name: nil,
+                    description: nil,
+                    zone:)eval(build_fetch 'ModifyS2Server')
+                end
+
+                def resize_s2_servers(
+                    s2_server:,
+                    s2_server_type:,
+                    zone:)eval(build_fetch 'ResizeS2Servers')
+                end
+
+                def delete_s2_servers(
+                    s2servers_N:,
+                    zone:)eval(build_fetch 'DeleteS2Servers')
+                end
+
+                def power_on_s2_servers(
+                    s2_servers_N:,
+                    zone:)eval(build_fetch 'PowerOnS2Servers')
+                end
+
+                def power_off_s2_servers(
+                    s2_servers_N:,
+                    zone:)eval(build_fetch 'PowerOffS2Servers')
+                end
+
+                def update_s2_servers(
+                    s2_servers_N:,
+                    zone:)eval(build_fetch 'UpdateS2Servers')
+                end
+
+                def change_s2_server_vxnet(
+                    s2_server:,
+                    vxnet:,
+                    private_ip: nil,
+                    zone:)eval(build_fetch 'ChangeS2ServerVxnet')
+                end
+
+                def create_s2_shared_target(
+                    s2_server:,
+                    export_name:,
+                    target_type:,
+                    description: nil,
+                    volumes_N: [],
+                    initiator_names_N: [],
+                    zone:)eval(build_fetch 'CreateS2SharedTarget')
+                end
+
+                def describe_s2_shared_targets(
+                    shared_targets_N: [],
+                    s2_server_id: nil,
+                    search_word: nil,
+                    verbose: nil,
+                    offset: nil,
+                    limit: nil,
+                    zone:)eval(build_fetch 'DescribeS2SharedTargets')
+                end
+
+                def delete_s2_shared_targets(
+                    shared_targets_N:,
+                    zone:)eval(build_fetch 'DeleteS2SharedTargets')
+                end
+
+                def enable_s2_shared_targets(
+                    shared_targets_N:,
+                    zone:)eval(build_fetch 'EnableS2SharedTargets')
+                end
+
+                def disable_s2_shared_targets(
+                    shared_targets_N:,
+                    zone:)eval(build_fetch 'DisableS2SharedTargets')
+                end
+
+                def modify_s2_shared_targets(
+                    shared_targets_N:,
+                    operation:,
+                    initiator_names_N:,
+                    zone:)eval(build_fetch 'ModifyS2SharedTargets')
+                end
+
+                def attach_to_s2_shared_target(
+                    shared_target:,
+                    volumes_N:,
+                    zone:)eval(build_fetch 'AttachToS2SharedTarget')
+                end
+
+                def detach_from_s2_shared_target(
+                    shared_target:,
+                    volumes_N:,
+                    zone:)eval(build_fetch 'DetachFromS2SharedTarget')
+                end
+
+                def describe_s2_default_parameters(
+                    service_type:,
+                    target_type:,
+                    offset:,
+                    limit:,
+                    zone:)eval(build_fetch 'DescribeS2DefaultParameters')
+                end
+
+                # Spark
+
+                def add_spark_nodes(
+                    spark:,
+                    node_count:,
+                    spark_node_name: nil,
+                    private_ips_N_role: [],
+                    private_ips_N_private_ips: [],
+                    zone:)eval(build_fetch 'AddSparkNodes')
+                end
+
+                def delete_spark_nodes(
+                    spark:,
+                    spark_nodes_N:,
+                    zone:)eval(build_fetch 'AddSparkNodes')
+                end
+
+                def start_sparks(
+                    sparks_N:,
+                    zone:)eval(build_fetch 'StartSparks')
+                end
+
+                def stop_sparks(
+                    sparks_N:,
+                    zone:)eval(build_fetch 'StopSparks')
+                end
             end
 
         end
