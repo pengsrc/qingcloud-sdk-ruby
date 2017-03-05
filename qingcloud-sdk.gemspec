@@ -6,7 +6,7 @@ require 'qingcloud/sdk/version'
 Gem::Specification.new do |spec|
     spec.name = 'qingcloud-sdk'
     spec.version = QingCloud::SDK::VERSION
-    spec.authors = ['Peng Jingwen']
+    spec.authors = ['Jingwen Peng']
     spec.email = ['pengsrc@icloud.com']
 
     if spec.respond_to?(:metadata)

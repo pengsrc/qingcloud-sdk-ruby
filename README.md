@@ -1,3 +1,7 @@
+__Notice__: This repository is no longer maintained, please use [yunify/qingcloud-sdk-ruby](https://github.com/yunify/qingcloud-sdk-ruby) instead.
+
+---
+
 # QingCloud::SDK
 
 SDK for QingCloud
@@ -47,7 +51,7 @@ Using gem to remove this package:
 * API optional parameter can be ignored when call ruby method.
 
 Example:
-	
+
 ```ruby
 Action: "DescribeInstances" -> "describe_instances"
 Parameter: "zone" -> "zone"
@@ -79,13 +83,13 @@ puts service.response
 
 # Run Instances
 
-service.run_instances image_id: 'centos7x64b', 
-                      cpu: 1, 
-                      memory: 1024, 
-                      login_mode: 'keypair', 
-                      login_keypair: 'keypair-id', 
+service.run_instances image_id: 'centos7x64b',
+                      cpu: 1,
+                      memory: 1024,
+                      login_mode: 'keypair',
+                      login_keypair: 'keypair-id',
                       zone: 'ap1'
-                     
+
 puts service.response
 
 # Terminate Instances
